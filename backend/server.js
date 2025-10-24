@@ -1,19 +1,25 @@
 import express from "express";
-import dotenv from "dotenv";
+import mongoose from "mongoose";
 import cors from "cors";
-import connectDB from "./config/db.js";
+import dotenv from "dotenv";
 import contactRoutes from "./routes/contactRoutes.js";
 
 dotenv.config();
-const app = express();
 
-app.use(cors({ origin: "http://localhost:3000" }));
+const app = express();
+app.use(cors({ origin: "http://localhost:3001" }));
 app.use(express.json());
+
 app.use("/api/contact", contactRoutes);
 
-app.get("/", (req, res) => res.send("Portfolio Contact API is running..."));
+mongoose
+  .connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    dbName: "portfolio_db", // ✅ ensures it uses the right DB
+  })
+  .then(() => console.log("✅ MongoDB connected"))
+  .catch((err) => console.error("❌ MongoDB connection error:", err));
 
 const PORT = process.env.PORT || 5000;
-connectDB().then(() =>
-  app.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`))
-);
+app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
