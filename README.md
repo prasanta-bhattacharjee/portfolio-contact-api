@@ -1,8 +1,8 @@
-🌐 Portfolio Contact API & Frontend (React + Node.js + MongoDB)
+🌐 Portfolio Contact API & Frontend (React + Express.js + MongoDB)
 
 This is a secure full-stack contact form built with:
 
-- Backend: Node.js (Express + MongoDB + Validation + Rate Limiting)
+- Backend: Express.js (Node.js + MongoDB + Validation + Rate Limiting)
 - Frontend: React (with built-in Captcha, validation, and error handling)
 - Database: MongoDB (local via Compass)
 
