@@ -1,0 +1,16 @@
+[{
+  "_id": {
+    "$oid": "68fb0791e14d513114e1a6c1"
+  },
+  "name": "I'm demo",
+  "email": "demo@gmail.com",
+  "subject": "nothing",
+  "message": "demo demo demo",
+  "createdAt": {
+    "$date": "2025-10-24T04:58:57.833Z"
+  },
+  "updatedAt": {
+    "$date": "2025-10-24T04:58:57.833Z"
+  },
+  "__v": 0
+}]
